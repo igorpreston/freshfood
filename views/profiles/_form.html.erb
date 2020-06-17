@@ -1,0 +1,24 @@
+<%= simple_form_for profile do |f| %>
+  <div class="form-container__body">
+    <fieldset class="profile-edit-section">
+      <h3 class="profile-edit-section__heading"><%= t(".name") %></h3>
+      <%= f.input :name %>
+    </fieldset>
+
+    <fieldset class="profile-edit-section">
+      <h3 class="profile-edit-section__heading"><%= t(".contact") %></h3>
+      <%= f.input :email %>
+    </fieldset>
+
+    <fieldset class="profile-edit-section">
+      <h3 class="profile-edit-section__heading"><%= t(".location") %></h3>
+      <%= f.input :address %>
+      <%= f.input :zipcode %>
+      <%= f.input :notes, as: :text, input_html: { rows: 5 } %>
+    </fieldset>
+  </div>
+
+  <footer class="form-container__footer">
+    <%= f.submit %>
+  </footer>
+<% end %>

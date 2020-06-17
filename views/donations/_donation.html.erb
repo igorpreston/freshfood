@@ -1,0 +1,28 @@
+<div class="dl-group">
+  <%= render(donation.scheduled_pickup) %>
+</div>
+
+<div class="dl-group">
+  <%= render_donation_status(donation) do %>
+    <% unless donation.picked_up? %>
+      <%= link_to edit_donation_path(donation), class: "edit-donation" do %>
+        <%= t("donations.donation.edit") %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<% if donation.confirmed? %>
+  <div class="dl-group" data-role="donation-size">
+    <dl>
+      <dt><%= t(".size") %></dt>
+      <dd><%= t("simple_form.options.donation.size.#{donation.size}") %></dd>
+    </dl>
+  </div>
+  <div class="dl-group" data-role="donation-notes">
+    <dl>
+      <dt><%= t(".notes") %></dt>
+      <dd><%= donation.notes %></dd>
+    </dl>
+  </div>
+<% end %>

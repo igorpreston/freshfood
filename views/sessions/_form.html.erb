@@ -1,0 +1,17 @@
+<%= simple_form_for(Session.new, url: session_path) do |f| %>
+  <div class="form-container__body">
+    <%= f.input(:email) %>
+
+    <%= f.input(:password) %>
+  </div>
+
+  <div class="form-container__footer">
+      <%= f.submit %>
+
+      <% if Clearance.configuration.allow_sign_up? %>
+        <%= link_to t(".sign_up"), sign_up_path %>
+      <% end %>
+      <%= link_to t(".forgot_password"), new_password_path %>
+
+  </div>
+<% end %>

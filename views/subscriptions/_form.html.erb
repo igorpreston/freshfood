@@ -1,0 +1,17 @@
+<%= simple_form_for(
+  subscription,
+  url: zone_subscriptions_path(subscription.zipcode),
+) do |f| %>
+  <div class="form-container__body">
+    <p><%= t(".prompt") %></p>
+    <%= f.input :email %>
+  </div>
+
+  <footer class="form-container__footer">
+    <%= f.submit %>
+
+    <%= link_to root_path, class: "opt-out-link" do %>
+      <%= t(".decline") %>
+    <% end %>
+  </footer>
+<% end %>

@@ -1,0 +1,35 @@
+.application-header {
+  background: $white;
+  border-bottom: $base-border;
+  height: $header-height;
+  position: relative;
+
+  .logo {
+    @include size($header-height);
+    display: inline-block;
+
+    @include media($medium-screen-up) {
+      @include size(75px);
+    }
+  }
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.main-nav {
+  align-items: center;
+  display: flex;
+  float: right;
+  height: 100%;
+
+  li {
+    display: inline-block;
+    margin-right: $small-spacing;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

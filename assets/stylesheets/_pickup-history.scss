@@ -1,0 +1,37 @@
+.pickup-confirmation {
+  &::before {
+    @include size(10px);
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    margin-right: $xsmall-spacing;
+  }
+
+  &.success::before {
+    background-color: $action-color;
+  }
+
+  &.failure::before {
+    background-color: $red;
+  }
+
+  &.no_donation {
+    color: $label-font-color;
+
+    &::before {
+      background-color: $label-font-color;
+    }
+  }
+
+  &.confirmed::before {
+    background-color: $brand-orange;
+  }
+
+  &.pending {
+    color: $medium-gray;
+
+    &::before {
+      background-color: $medium-gray;
+    }
+  }
+}

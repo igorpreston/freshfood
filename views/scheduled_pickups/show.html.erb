@@ -1,0 +1,31 @@
+<div class="content-wrapper-large content-container">
+  <%= render("scheduled_pickups/zone", zone: @scheduled_pickup.zone) %>
+
+  <section class="zipcode-content-section" data-role="pickup-time">
+    <h2 class="section-label"><%= t(".time") %></h2>
+    <span><%= @scheduled_pickup.time_range %></span>
+
+    <%= link_to(
+      [:edit, @scheduled_pickup.zone, @scheduled_pickup],
+      class: "edit-link",
+    ) do %>
+      <%= t(".edit") %>
+    <% end %>
+  </section>
+
+  <section class="zipcode-content-section">
+    <h2 class="section-label"><%= t(".confirmation.header") %></h2>
+    <span>
+      <%= t(
+        ".confirmation.time",
+        time: l(@scheduled_pickup.confirmation_requested_at, format: :at),
+      ) %>
+    </span>
+  </section>
+
+  <section class="zipcode-content-section">
+    <%= render("scheduled_pickups/donations", scheduled_pickup: @scheduled_pickup) %>
+
+    <%= render(@scheduled_pickup.build_google_map(callback: "initMap", id: "map")) %>
+  </section>
+</div>

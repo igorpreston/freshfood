@@ -1,0 +1,17 @@
+<dl>
+  <dt>
+    <%= t(
+      ".html",
+      date: l(donation.pickup_date, format: :default),
+    ) %>
+  </dt>
+  <% if donation.pending? %>
+    <%= render("donations/actions", donation: donation) %>
+  <% else %>
+    <dd class="donation-status--<%= status_for_donation(donation) %>" data-role="donation-status">
+      <%= label_for_donation(donation) %>
+
+      <%= yield %>
+    </dd>
+  <% end %>
+</dl>

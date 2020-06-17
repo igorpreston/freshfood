@@ -1,0 +1,110 @@
+.profile-header {
+  border-bottom: $base-border;
+  text-align: center;
+
+  &__heading {
+    color: $brand-teal;
+    display: inline-block;
+  }
+
+  &__edit {
+    color: $blue;
+    cursor: pointer;
+    padding: 0 $small-spacing;
+    text-decoration: underline;
+  }
+}
+
+.profile-section,
+.profile-edit-section {
+  border-bottom: $base-border;
+  padding: $base-spacing 0;
+
+  &:last-of-type {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &__heading {
+    display: inline-block;
+  }
+}
+
+.preferences-label {
+  display: inline-block;
+}
+
+.next-pickup-date {
+  color: $base-font-color;
+}
+
+.donation-status {
+  &--confirmed::before,
+  &--declined::before {
+    @include size(10px);
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    margin-right: $xsmall-spacing / 2;
+  }
+
+  &--confirmed::before {
+    background-color: $action-color;
+  }
+
+  &--declined::before {
+    background-color: $red;
+  }
+}
+
+// Styles for Alternative Profile Layout
+
+.supplier-info {
+  margin: $base-spacing 0 $base-spacing $base-spacing;
+  //text-align: center;
+  width: 100%;
+
+  @include media($large-screen-up) {
+    @include span-columns(3 of 9);
+    margin: $base-spacing 0 0;
+  }
+
+  &__name {
+    color: $action-color;
+    text-align: center;
+    margin-left: -$base-spacing;
+
+    @include media($large-screen-up) {
+      margin-left: 0;
+      text-align: left;
+    }
+  }
+
+  &__metadata {
+    display: block;
+    padding-right: $small-spacing;
+  }
+
+  .edit {
+    display: inline-block;
+    margin-top: $base-spacing;
+    text-decoration: underline;
+  }
+}
+
+.main-profile-content {
+  width: 100%;
+
+  @include media($large-screen-up) {
+    @include span-columns(6 of 9);
+  }
+}
+
+.edit-donation {
+  margin-left: $small-spacing;
+  text-decoration: underline;
+}
+
+.donation-actions {
+  margin-top: $base-spacing;
+}

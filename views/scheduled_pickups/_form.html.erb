@@ -1,0 +1,12 @@
+<%= simple_form_for(
+  scheduled_pickup,
+  url: [scheduled_pickup.zone, scheduled_pickup],
+  ) do |f| %>
+  <div class="form-container__body">
+    <%= f.input :start_at, wrapper_html: {class: "multiple-select-wrapper"} %>
+    <%= f.input :end_at, wrapper_html: {class: "multiple-select-wrapper"} %>
+  </div>
+  <footer class="form-container__footer">
+    <%= f.submit %>
+  </footer>
+<% end %>

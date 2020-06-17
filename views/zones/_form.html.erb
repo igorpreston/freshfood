@@ -1,0 +1,10 @@
+<%= simple_form_for zone do |f| %>
+  <div class="form-container__body">
+    <p><%= t("zones.new.prompt") %></p>
+    <%= f.input :zipcode %>
+    <%= render("zones/time_fields", f: f) %>
+  </div>
+  <footer class="form-container__footer">
+    <%= f.submit %>
+  </footer>
+<% end %>

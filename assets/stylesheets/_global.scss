@@ -1,0 +1,119 @@
+body {
+  background: $light-gray;
+  position: relative;
+}
+
+.content-container {
+  @include clearfix;
+  background: $white;
+  border: $base-border;
+  border-radius: $base-border-radius;
+  margin: $xsmall-spacing 0;
+  padding: $base-spacing;
+
+  @include media($medium-screen-up) {
+    margin: $base-spacing 0;
+  }
+}
+
+.nav-wrapper {
+  @include outer-container;
+  height: 100%;
+  padding: 0 $xsmall-spacing;
+}
+
+.page-wrapper,
+.section-wrapper {
+  @include outer-container;
+  padding: 0 $xsmall-spacing;
+
+  @include media($medium-screen-up) {
+    padding: 0;
+  }
+}
+
+.content-wrapper-narrow {
+  @include clearfix;
+  width: 100%;
+
+  @include media($medium-screen-up) {
+    @include span-columns(7 of 12);
+    @include shift(2.5 of 12);
+  }
+}
+
+.content-wrapper-large {
+  width: 100%;
+
+  @include media($medium-screen-up) {
+    @include span-columns(9 of 12);
+    @include shift(1.5 of 12);
+  }
+}
+
+.next-steps {
+  margin: $large-spacing 0;
+
+  li {
+    margin: $base-spacing 0;
+  }
+}
+
+.user-type-section {
+  margin-bottom: $large-spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.supplier-name {
+  color: $action-color;
+}
+
+.section-label {
+  color: $label-font-color;
+  font-size: $label-font-size;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-top: $small-spacing;
+  text-transform: uppercase;
+}
+
+.svg-icon {
+  @include size(0.8em);
+  fill: $action-color;
+  margin-right: $xsmall-spacing;
+  vertical-align: middle;
+}
+
+.btn-container {
+  margin-top: $xsmall-spacing;
+
+  form {
+    display: inline-block;
+  }
+}
+
+.terms-and-conditions,
+.food-safety-policy {
+  h2 {
+    color: $action-color;
+    margin-bottom: $large-spacing;
+    text-align: center;
+  }
+
+  h3 {
+    margin-top: $base-spacing;
+  }
+
+  li {
+    margin-bottom: $xsmall-spacing;
+
+    &::before {
+      color: $action-color;
+      content: "• ";
+      margin-right: $xsmall-spacing;
+    }
+  }
+}

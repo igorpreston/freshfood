@@ -1,0 +1,73 @@
+table {
+  border-collapse: collapse;
+  border: $base-border;
+  margin: $small-spacing 0;
+  table-layout: auto;
+  width: 100%;
+}
+
+th {
+  border-bottom: $base-border;
+  font-weight: 600;
+  padding: ($small-spacing / 2) $small-spacing;
+  text-align: left;
+}
+
+td {
+  border-bottom: $base-border;
+  margin-bottom: 2px;
+  padding: ($small-spacing / 2) $small-spacing;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+.table-actions {
+  text-align: right;
+
+  button {
+    color: $action-color;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: shade($action-color, 25%);
+    }
+  }
+
+  .table-delete {
+    color: $red;
+
+    &:hover {
+      color: darken($red, 15%);
+    }
+  }
+}
+
+.table-link {
+  background: none;
+  font-weight: 400;
+  margin: 0 $xsmall-spacing;
+  padding: 0;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    background: none;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.btn-cell {
+  text-align: right;
+}
